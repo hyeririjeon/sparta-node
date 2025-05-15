@@ -1,3 +1,5 @@
+const USER_ROLE = require('../common/constant/user.role');
+
 const users = [];
 
 // 회원가입
@@ -6,7 +8,8 @@ exports.createUser = (username, password, nickname) => {
         id: users.length + 1,
         username,
         password,
-        nickname
+        nickname,
+        roles: [USER_ROLE.USER]
     };
     users.push(newUser);
     return newUser;

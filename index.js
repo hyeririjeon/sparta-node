@@ -1,5 +1,7 @@
+require('dotenv').config();
 const express = require('express');
-const userRouter = require('./routes/user.routes');
+//const userRouter = require('./routes/user.route');
+const authRouter = require('./routes/auth.route');
 
 const app = express();
 app.use(express.json());
@@ -7,7 +9,8 @@ app.get('/', (req, res) => {
     res.send('회원관리 시스템에 오신 걸 환영합니다!');
 });
 
-app.use('/api/users', userRouter);
+//app.use('/api/users', userRouter);
+app.use('/api/auth', authRouter);
 
 // 테스트용으로 app export
 module.exports = app;
