@@ -47,9 +47,10 @@ echo "JWT_SECRET=your-secret-key" > .env
 
 # 서버 실행
 node index.js
-
+```
 ---
 ## 🧪 테스트
+
 ```text
 npm test
 ```
