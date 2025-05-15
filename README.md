@@ -1,7 +1,6 @@
 # 🛡️ User Management System (Node.js + JWT)
 
 사용자 회원가입/로그인 기능을 제공하며, JWT 인증 기반의 API 보호 기능을 포함한 사용자 관리 백엔드 서버입니다.  
-Swagger 문서를 통해 모든 API를 한눈에 확인하고 테스트할 수 있습니다.
 
 ---
 
@@ -33,8 +32,6 @@ Local 실행 시: http://localhost:3000/api-docs
 배포 링크: http://3.34.200.144:3000/api-docs
 ```
 
-Swagger UI에서 전체 API 명세, 요청/응답 예시 및 상태 코드를 확인할 수 있습니다.
-
 ---
 
 ## 📦 설치 및 실행
@@ -49,6 +46,18 @@ echo "JWT_SECRET=your-secret-key" > .env
 node index.js
 ```
 ---
+📑 API 명세 (요약)
+Base URL: http://3.34.200.144:3000
+
+## 📑 API 명세
+
+| 메서드 | 경로      | 설명              | 권한      |
+|--------|-----------|-------------------|-----------|
+| POST   | `/api/auth/signup` | 회원가입           | 모두       |
+| POST   | `/api/auth/login`  | 로그인 (JWT 발급)  | 모두       |
+| GET    | `/api/users/me` | 내 정보 조회       | USER 이상 |
+
+---
 ## 🧪 테스트
 
 ```text
@@ -56,4 +65,4 @@ npm test
 ```
 - 회원가입 성공/실패
 - 로그인 성공/실패
-- 인증된 사용자만 /me 접근 가능
+- 인증된 토큰 보유 사용자만 /me 접근 가능
