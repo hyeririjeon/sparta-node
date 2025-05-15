@@ -12,6 +12,8 @@ app.get('/', (req, res) => {
 app.use('/api/users', userRouter);
 app.use('/api/auth', authRouter);
 
+require('./common/swagger/swagger')(app);
+
 // 테스트용으로 app export
 module.exports = app;
 
